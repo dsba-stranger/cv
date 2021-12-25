@@ -14,18 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build and publish CV 
       run:  |
-        docker build . --file Dockerfile --tag cv
-
-  publish:
-    
-    runs-on: ubuntu-latest
-    needs: build
-    
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        token: ${{secrets.PAT}}
-    - name: Publish CV to branch
-      run: docker run cv && docker cp $(docker ps -l -q):/cv.pdf cv.pdf && git checkout -b cv && git add cv.pdf && git commit -m "cv" && git push origin cv
+        name="cv"
+        docker build . --file Dockerfile --tag $name
+        docker run $name
+        docker cp $(docker ps -l -q):/$name.pdf $name.pdf
+        git checkout -b $name
+        git add $name.pdf
+        git commit -m "cv"
+        git push origin $name
