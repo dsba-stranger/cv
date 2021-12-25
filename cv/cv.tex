@@ -1,0 +1,144 @@
+%
+% Simple asymmetric two-column CV 
+% Author: Sofia JIJON
+%
+
+\documentclass[a4paper,10pt]{article}
+\usepackage[vmargin=1.5cm, hmargin=1.5cm]{geometry}
+\input{MySetup}
+%-------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\thispagestyle{empty}
+
+%-------------------------------------------------------------------------------------------------------
+% Left column
+%-------------------------------------------------------------------------------------------------------
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.3\textwidth} % Adapt width to your convenience
+%----------------------------------------------------
+% Please add a photo in 1x1 format
+\begin{center}
+\begin{tikzpicture}
+	\clip (0,0) circle (2cm) node {\includegraphics[width=4cm]{whoami}};
+\end{tikzpicture}
+
+\MySkip 	% See MySetup.tex file
+
+%----------------------------------------------------
+{\LARGE \bfseries Kirill Korolev}
+
+\MySkip 	% See MySetup.tex file
+
+City -- Moscow\\
+
+\MySkip 	% See MySetup.tex file
+
+\textcolor{ColorTwo}{\faEnvelopeO} 
+\myhref{mailto:kafafyf@gmail.com}{kafafyf@gmail.com} \\
+
+\textcolor{ColorTwo}{\faChain} 
+\myhref{https://github.com/dsba-stranger}{https://github.com/dsba-stranger}
+\end{center}
+
+\vfill
+
+%----------------------------------------------------
+\section*{Scientific interests}
+\raggedright
+\textcolor{ColorOne}{$\circ$} Algorithms \& Data Structures\\
+\textcolor{ColorOne}{$\circ$} Calculus\\
+\textcolor{ColorOne}{$\circ$} Linear Algebra\\
+\textcolor{ColorOne}{$\circ$} Probability Theory
+
+\vfill
+
+%----------------------------------------------------
+\section*{Education}
+	\begin{description}
+	\raggedright
+	\item [\normalfont \textcolor{ColorOne}{2024.}] \textbf{Bachelor in Computer Science}\\
+	Higher School of Economics\\
+	City -- Moscow
+\end{description}
+
+\vfill
+\end{minipage}
+\end{adjustbox}
+%
+%
+%-------------------------------------------------------------------------------------------------------
+% Vertical rule
+%-------------------------------------------------------------------------------------------------------
+%
+\hfill
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.05\textwidth} % Adapt width to your convenience
+\MyVerticalRule  % See MySetup.tex file
+\end{minipage}
+\end{adjustbox}
+\hfill
+%
+%-------------------------------------------------------------------------------------------------------
+% Right column
+%-------------------------------------------------------------------------------------------------------
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.6\textwidth} % Adapt width to your convienience
+\section*{Current situation}
+\begin{description}
+\raggedright
+\item[\normalfont \textcolor{ColorOne}{Nov. 2021 -- Nowadays}] \textbf{Yandex}\\ \medskip
+
+Working as backend developer in Yandex\\
+
+
+\end{description}
+
+%----------------------------------------------------
+\section*{Experience}
+\begin{description}
+\raggedright
+\item[\normalfont \textcolor{ColorOne}{Sep. 2021 -- Nowadays}] 
+	\textbf{Linear Algebra Teaching Assistant}\\ \medskip
+	
+	Linear Algebra Teaching Assistant at HSE\\
+	
+	Holding consultations and colloquiums, checking homeworks
+	
+\item[\normalfont \textcolor{ColorOne}{Sep. 2021 -- Nowadays}] 
+	\textbf{Tutor}\\ \medskip
+	
+    Tutoring Linear Algebra and Programming for students of Higher School of Economics 
+\end{description}
+
+\section*{Hobbies}
+\begin{description}
+	\raggedright
+	\item Playing music on several instruments: guitar, drums, piano
+	\item Fond of of cinema and sports
+\end{description}
+
+\MySkip
+%----------------------------------------------------
+\begin{multicols}{2}
+\section*{Programming}
+\begin{tabular}{ll}
+	C++  			& \SkillBull{$\bullet \bullet \bullet$}\\
+	Python 		& \SkillBull{$\bullet \bullet \bullet$}\\
+	Go 	& \SkillBull{$\bullet \bullet \circ $}\\
+\end{tabular}
+
+\vfill\null \columnbreak  % Break column for new section
+
+\section*{Languages}
+\begin{tabular}{ll}
+	Russian 		& \SkillBull{$\bullet \bullet \bullet$}\\
+	English 		& \SkillBull{$\bullet \bullet \circ$}\\
+\end{tabular}
+\end{multicols}
+%----------------------------------------------------
+\LastUpdate
+%----------------------------------------------------
+\end{minipage}
+\end{adjustbox}
+\end{document}
