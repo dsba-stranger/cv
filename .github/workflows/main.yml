@@ -14,7 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build and publish CV 
+      with:
+        token: ${{secrets.PAT}}
+    - name: Build and publish CV
       run:  |
         name="cv"
         docker build . --file Dockerfile --tag $name
