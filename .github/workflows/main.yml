@@ -15,9 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run:  | 
-        tag=$(date +%s)
-        docker build . --file Dockerfile --tag $tag
+      run:  |
+        docker build . --file Dockerfile --tag cv
 
   publish:
     
@@ -28,4 +27,4 @@ jobs:
       with:
         token: ${{secrets.PAT}}
     - name: Publish CV to branch
-      run: docker run $tag && docker cp $(docker ps -l -q):/cv.pdf cv.pdf && git checkout -b cv && git add cv.pdf && git commit -m "cv" && git push origin cv
+      run: docker run cv && docker cp $(docker ps -l -q):/cv.pdf cv.pdf && git checkout -b cv && git add cv.pdf && git commit -m "cv" && git push origin cv
