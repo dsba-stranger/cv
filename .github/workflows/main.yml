@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
     - name: Build
       run:  |
         docker build . --file Dockerfile --tag cv
@@ -21,7 +20,7 @@ jobs:
         docker cp $(docker ps -l -q):/$name.pdf cv.pdf
         
     - name: Publish CV
-    - uses: EndBug/add-and-commit@v7
+      uses: EndBug/add-and-commit@v7
       with:
         add: cv.pdf
         author_name: Kirill Korolev
