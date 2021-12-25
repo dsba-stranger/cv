@@ -26,6 +26,7 @@ jobs:
         branch_mode: create
         author_name: Kirill Korolev
         author_email: kakorolev@edu.hse.ru
+        push: origin cv --force
         branch: cv
         message: 'Uploading new CV'
       
