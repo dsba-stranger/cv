@@ -23,6 +23,7 @@ jobs:
       uses: EndBug/add-and-commit@v7
       with:
         add: cv.pdf
+        branch_mode: create
         author_name: Kirill Korolev
         author_email: kakorolev@edu.hse.ru
         branch: cv
