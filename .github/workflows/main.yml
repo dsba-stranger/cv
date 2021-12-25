@@ -14,15 +14,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        token: ${{secrets.PAT}}
-    - name: Build and publish CV
+    - name: Build
       run:  |
-        name="cv"
-        docker build . --file Dockerfile --tag $name
-        docker run $name
-        docker cp $(docker ps -l -q):/$name.pdf $name.pdf
-        git checkout -b $name
-        git add $name.pdf
-        git commit -m "cv"
-        git push origin $name
+        docker build . --file Dockerfile --tag cv
+        docker run cv
+        docker cp $(docker ps -l -q):/$name.pdf cv.pdf
+  
+  publish:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: EndBug/add-and-commit@v7
+      with:
+        add: cv.pdf
+        author_name: Kirill Korolev
+        author_email: kakorolev@edu.hse.ru
+        branch: cv
+        message: 'Uploading new CV'
+    - name: Publish CV
+      
+    
+    
