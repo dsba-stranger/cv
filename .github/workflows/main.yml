@@ -26,4 +26,4 @@ jobs:
       with:
         token: ${{secrets.PAT}}
     - name: Publish CV to branch
-      run: docker run cv:latest && docker cp $(docker ps -l -q):/cv.pdf cv.pdf && git checkout -b cv && git add cv.pdf && git commit -m "cv" && git push origin cv
+      run: docker cp $(docker ps -l -q):/cv.pdf cv.pdf && git checkout -b cv && git add cv.pdf && git commit -m "cv" && git push origin cv
